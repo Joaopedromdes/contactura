@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-from-usuarios',
-  templateUrl: './from-usuarios.component.html',
-  styleUrls: ['./from-usuarios.component.scss']
+  templateUrl: './form-usuarios.component.html', //troquei aqui
+  styleUrls: ['./form-usuarios.component.scss']
 })
 export class FromUsuariosComponent implements OnInit {
 

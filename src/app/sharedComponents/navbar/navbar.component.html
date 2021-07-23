@@ -1,0 +1,21 @@
+<nav class="navbar">
+    <!-- Menu responsivo Mobile-->
+    <span id="menu-mobile" class="navbar-toogle">
+        <mat-icon>menu</mat-icon>
+    </span>
+
+    <!-- Menu para Desktop -->
+    <span class="logo"><img src="../../../assets/img/Logo-Contactura.png" alt="Logo Contactura"></span>
+
+    <ul id="menu-desktop" class="main-nav">
+        <li>
+            <a routerLink="/lista-contatos" class="nav-links">Contatos</a>
+        </li>
+        <li>
+            <a routerLink="/lista-usuarios" class="nav-links">Usuários</a>
+        </li>
+        <li>
+            <a class="nav-links logout" (click)="logout()">Logout</a>
+        </li>
+    </ul>
+</nav>

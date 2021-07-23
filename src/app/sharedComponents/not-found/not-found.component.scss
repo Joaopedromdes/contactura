@@ -1,0 +1,47 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    
+}
+.broke-robot{
+    display: flex;
+    justify-content: center;
+    margin-top: 100px;
+    
+    .robot{
+        max-width: 400px;
+    }
+}
+.erro{
+    display: flex;
+    justify-content: center;
+
+    h1{
+        font-size: 50px;
+        font-weight: bolder;
+        color: white;
+        background-color: rgb(253, 146, 164);
+        padding: 20px;
+    }
+}
+.putz{
+    text-align: center;
+    margin-top: 30px;
+}
+.backToLogin{
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+
+    a{
+        color: white;
+        background-color: rgb(253, 146, 164);
+        padding: 15px;
+        border-radius: 10px;
+        text-decoration: none;
+        font-size: 18px;
+        font-weight: bolder;
+    }
+}
+
