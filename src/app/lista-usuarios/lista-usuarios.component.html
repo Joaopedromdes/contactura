@@ -1,2 +1,39 @@
 <app-navbar></app-navbar>
-<p>lista-usuarios works!</p>
+<section>
+    <div class="container_title">
+        <h1>USUÁRIOS</h1>
+    </div>
+</section>
+<section>
+    <div class="container_buttons">
+        <button routerLink="/cadastro-usuario" mat-raised-button color="primary">Cadastrar Novo Usuario</button>
+        <button  routerLink="/cadastro-contatos" mat-raised-button color="primary">Cadastrar Novo Contato</button>
+    </div>
+</section>
+<section>
+    <div>
+        <table>
+            <thead>
+                <tr>
+                    <th scope="col">NOME</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">PASSWORD</th>
+                    <th scope="col">ADMINISTRADOR</th>
+                    <th>MENU</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let user of userList">
+                    <td data-label="Nome">{{ user.name }}</td>
+                    <td data-label="Username">{{ user.email }}</td>
+                    <td data-label="Senha">{{ user.password }}</td>
+                    <td data-label="Adminisrador">{{ user.admin }}</td>
+                    <td><div class="container_buttons_table">
+                        <mat-icon (click)="deleteUsers(user)">delete</mat-icon>
+                        <mat-icon (click)="editUsers(user)">edit</mat-icon>
+                    </div></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</section>

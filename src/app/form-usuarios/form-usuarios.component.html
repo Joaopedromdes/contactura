@@ -1,1 +1,20 @@
-<p>from-usuarios works!</p>
+<app-navbar></app-navbar>
+<form class="grid-container" [formGroup]="formUsers">
+    <h1>Cadastrar Novo Usuário</h1>
+    <mat-form-field class="item3">
+      <mat-label>Email</mat-label>
+      <input formControlName="email" type="email" matInput >
+    </mat-form-field>
+    <mat-form-field class="item2">
+      <mat-label>Senha</mat-label>
+      <input formControlName="password" type="password" matInput >
+    </mat-form-field>
+    <mat-form-field class="item1">
+      <mat-label>Nome</mat-label>
+      <input formControlName="name"  type="text" matInput >
+    </mat-form-field>
+  
+    <mat-checkbox formControlName="admin" class="item5">Administrador?</mat-checkbox>   
+     
+</form>
+  <button class="item4" mat-raised-button color="primary" (click)="save()">Salvar Usuário</button>

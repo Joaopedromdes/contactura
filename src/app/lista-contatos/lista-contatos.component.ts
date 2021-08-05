@@ -1,17 +1,21 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import Swal from 'sweetalert2';
 import { Contacts } from '../models/contacts';
+import { ContatosService } from '../service/contatos/contatos.service';
 
 @Component({
   selector: 'app-lita-contatos',
-  templateUrl: './lista-contatos.component.html', //Troquei aqui
+  templateUrl: './lista-contatos.component.html', 
   styleUrls: ['./lista-contatos.component.scss']
 })
+
 export class LitaContatosComponent implements OnInit {
 
   contactsList: Contacts[];
   collection = {count: 10, data: []};
 
-  constructor() { }
+  constructor(private router: Router, public contatosService: ContatosService) { }
 
   ngOnInit(): void {
     this.populateContacts();
@@ -28,5 +32,28 @@ export class LitaContatosComponent implements OnInit {
     }
     this.contactsList = this.collection.data;
     console.log(this.contactsList);
+  }
+  editContatos(contatos: Contacts){
+    console.log('edit está funcionando', contatos);
+    this.contatosService.getContactsList(contatos);
+    this.router.navigate(['/cadastro-contatos']);
+  }
+
+  deleteContacts(contatos: Contacts){
+    Swal.fire({
+      title: 'Você tem certeza?',
+      text: 'Deseja mesmo deletar?',
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      confirmButtonText: 'sim',
+      cancelButtonText: 'Não'
+    }).then((result) => {
+      if(result.isConfirmed){
+        Swal.fire(
+          'Deletado com sucesso!',
+        );
+      }
+    });
   }
 }
